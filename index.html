@@ -3,685 +3,504 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meheret - Personal Portfolio</title>
+    <title>Meheret Abebe — Learning Designer &amp; UX Researcher</title>
+    <meta name="description" content="Meheret Abebe designs and tests research-grounded learning tools. Stanford M.S. Learning Design and Technology.">
+    <meta name="theme-color" content="#e9e4d8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400..800&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">Meheret Abebe</a>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#education" class="nav-link">Education</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#experience" class="nav-link">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#leadership" class="nav-link">Leadership</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        <symbol id="i-down" viewBox="0 0 16 16"><path d="M8 3v8M4.5 7.5 8 11l3.5-3.5M3.5 13.5h9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </svg>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm Meheret</h1>
-                <p class="hero-subtitle">Learning Design & Technology Graduate from Stanford University</p>
-                <p class="hero-description">
-                    I’m passionate about creating student centered educational experiences that are personalized and meaningful. With a background in Symbolic Systems and educational research from Stanford University, I have expertise in user research, product design, programming, prototyping, and AI integration in workflow. I’ve worked on multiple projects that involved delivering end-to-end products and have done research grounded in learning sciences, instructional design, and AI.  With my diverse skills,  I’m excited to contribute to developing and shaping innovative educational tools and experiences. 
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-image">
-                    <img src="1.JPG" alt="Meheret Abebe" class="hero-profile-img">
-                </div>
-            </div>
-        </div>
-    </section>
+    <a class="skip-link" href="#work">Skip to work</a>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="about-profile-image">
-                        <img src="2.JPG" alt="Meheret Abebe" class="about-profile-img">
-                    </div>
-                    <div class="about-gemini-image">
-                        <img src="Gemini_Generated_Image_co4k1xco4k1xco4k.png" alt="Learning Design & Technology" class="about-gemini-img">
-                    </div>
-                </div>
-                <div class="about-text">
-                    <p>
-                        I've always been fascinated by the <strong>mind</strong>—how we think, and adapt to our environment that 
-                        ultimately shapes our identity. That curiosity led me to pursue a B.S.
-                         in <strong>Symbolic Systems</strong> with a concentration in Neuroscience at Stanford University. This interdisciplinary program 
-                         gave me a deep understanding of the brain/mind through <strong>cognitive science</strong>, 
-                         <strong>neuroscience</strong>, <strong>philosophy</strong>, <strong>psychology</strong>, <strong>computer science</strong>, and <strong>math</strong>. Along 
-                         the way, I started to see the how the mind can be shaped by the concept of <strong>learning</strong>. That 
-                         realization drew me into understanding the learning sciences and the field of <strong>education</strong>.
+    <div class="reader">
+        <nav class="tabs" aria-label="Sections">
+            <ol>
+                <li><a class="tab" href="#work" style="--c: var(--teal); --c-ink: var(--on-dark)">Work</a></li>
+                <li><a class="tab" href="#experience" style="--c: var(--rust); --c-ink: var(--on-dark)">Experience</a></li>
+                <li><a class="tab" href="#skills" style="--c: var(--mustard); --c-ink: var(--ink)">Skills</a></li>
+                <li><a class="tab" href="#education" style="--c: var(--blue); --c-ink: var(--on-dark)">Education</a></li>
+                <li><a class="tab" href="#leadership" style="--c: var(--olive); --c-ink: var(--on-dark)">Leadership</a></li>
+                <li><a class="tab" href="#about" style="--c: var(--plum); --c-ink: var(--on-dark)">About</a></li>
+                <li><a class="tab" href="#contact" style="--c: var(--ink); --c-ink: var(--on-dark)">Contact</a></li>
+            </ol>
+        </nav>
 
-                    </p>
-                    <p>
-                        Beyond coursework, I worked in the <strong>Educational Neuroscience Lab</strong>, exploring how learning occurs at a neural level—how it's measured, the tools used to capture brain activity, and even how those tools are engineered through <strong>nanofabrication</strong>. I also designed <strong>gamified educational tools</strong> and <strong>interactive experiences</strong> for children, turning complex research experiments into playful, interactive learning activities. My <strong>honors thesis</strong> in the Graduate School of Education expanded this work, studying how <strong>personalized educational experiences</strong> in scenario based learning impact learning outcomes.Through all of these experiences, I found my passion for creating education tools rooted in <strong>constructivist learning theories</strong>—tools that make learning active, meaningful, and deeply personal.
-                    </p>
-                    <p>
-                        I further built on my interests by pursuing a Masters of Science in Stanford's <strong></strong>Learning Design and Technology program</strong>, where I designed, tested, and developed a tool, SyncED, for <strong>differentiated instruction</strong> that empowers instructors to meet every learner where they are. The tool included features like learner profiles and formative feedback, paired with actionable AI-driven suggestions on the instructor's teaching practices, to help instructors understand and adapt to their students' needs better. 
-                    </p>
-                    <p>
-                        My mission is simple yet ambitious: to create <strong>education models</strong> that help humans unlock their full thinking capacity. For me, that means fostering <strong>curiosity</strong>, <strong>creativity</strong>, <strong>cultural awareness</strong>, <strong>originality</strong>, <strong>confidence</strong>, and—above all—<strong>self-reflection</strong>. As the world becomes increasingly <strong>digital</strong>—and as <strong>AI</strong> continues to redefine what's possible—I believe <strong>technology</strong> can make <strong>student-centered</strong>, <strong>experiential</strong>, and <strong>personalized learning</strong> scalable in ways we've only imagined. With my experience in the intersection between eduaction and technology, my goal moving forward is to keep building tools and models that bring this vision to life—grounded in <strong>research</strong>, informed by <strong>user testing</strong>, and designed with a deep understanding of how people think and learn.
-                    </p>
-                    
+        <main class="sheet">
+            <!-- Cover -->
+            <header class="cover" id="top">
+                <div class="cover-text">
+                    <h1 class="cover-name"><span>Meheret</span> <span>Abebe</span></h1>
+                    <p class="cover-roles"><span>Learning designer ·</span> <span>UX researcher ·</span> <span>AI in education</span></p>
+                    <p class="cover-lead">I design and test learning tools grounded in research, from AI-supported differentiated instruction to interactive biology for CK-12.</p>
+                    <div class="cover-actions">
+                        <a class="btn btn-solid" href="mailto:meheret@alumni.stanford.edu">Email me</a>
+                        <a class="btn btn-line" href="Resume%202025%20-%20Meheret%20%28one%20page%29.pdf" download="Meheret_Resume_2025.pdf">
+                            Download résumé <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>
+                        </a>
+                    </div>
+                    <dl class="cover-facts">
+                        <div><dt>Degree</dt><dd>M.S. Learning Design and Technology, Stanford GSE, 2025</dd></div>
+                        <div><dt>Foundation</dt><dd>B.S. Symbolic Systems, Honors in Education</dd></div>
+                        <div><dt>Based in</dt><dd>Stanford, CA</dd></div>
+                    </dl>
+                </div>
+                <figure class="cover-portrait">
+                    <img src="img/portrait-cover.jpg" width="928" height="1400" alt="Meheret Abebe in a graduation stole on the Stanford Main Quad">
+                </figure>
+            </header>
 
-                    
+            <!-- Work -->
+            <section class="part" id="work" style="--c: var(--teal); --c-ink: var(--on-dark)" aria-labelledby="work-title">
+                <div class="divider">
+                    <h2 id="work-title">Work</h2>
+                    <p>Selected projects in learning design, UX research and AI.</p>
                 </div>
-                
-            </div>
-            <div class="hobbies-interests">
-                <h3>Hobbies & Interests</h3>
-                <div class="interests-grid">
-                   
-                    <div class="interest-item">
-                        <i class="fas fa-palette"></i>
-                        <span><a href="https://www.instagram.com/meh_art4u/" target="_blank" rel="noopener noreferrer" class="interest-link">Creative Design</a></span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-globe-africa"></i>
-                        <span>Cultural Exploration</span>
-                    </div>
-                    
-                    <div class="interest-item">
-                        <i class="fas fa-lightbulb"></i>
-                        <span><a href="gallery.html" class="interest-link">Innovation & Technology</a></span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-heart"></i>
-                        <span>Educational Impact</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2 class="section-title">Education & Background</h2>
-            <div class="education-timeline">
-                <div class="education-item">
-                    <div class="education-content">
-                        <div class="education-header">
-                            <h3><a href="https://ed.stanford.edu/ldt" target="_blank" rel="noopener noreferrer" style="color: #000;">M.S. Learning Design and Technology</a></h3>
-                            <span class="education-date">September 2024 - June 2025</span>
-                        </div>
-                        <p class="education-institution">Stanford Graduate School of Education</p>
-                        <p class="education-gpa">GPA: 3.9</p>
-                        <p class="education-description">
-                            Successfully completed Master's degree designing and testing an educational tool for diffrentiated instruction -SyncED- that uses AI to help professors tailor 
-                            their teaching strategies based on student profiles and ongoing formative feedback. 
-                            
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="education-item">
-                    <div class="education-content">
-                        <div class="education-header">
-                            <h3><a href="https://majors.stanford.edu/majors/symbolic-systems" target="_blank" rel="noopener noreferrer" style="color: #000;">B.S. Symbolic Systems (Honors in Education)</a></h3>
-                            <span class="education-date">September 2020 - June 2024</span>
-                        </div>
-                        <p class="education-institution">Stanford University</p>
-                        <p class="education-gpa">GPA: 3.7</p>
-                        <div class="education-courses">
-                            <h4>Key Coursework:</h4>
-                            <div class="course-categories">
-                                <div class="course-category">
-                                    <h5>Data Analysis & Math</h5>
-                                    <ul>
-                                        <li>Mulivariable Calculus & Linear Algebra</li>
-                                        <li>Data Analysis & Interpretation</li>
-                                        <li>Questionnaire Design</li>
-                                    </ul>
-                                </div>
-                                <div class="course-category">
-                                    <h5>Education & Psychology</h5>
-                                    <ul>
-                                        <li>Educational Neuroscience</li>
-                                        <li>Entrepreneurship in EdTech</li>
-                                        <li>Curriculum Construction</li>
-                                        <li>Digital Learning Design</li>
-                                        <li>Core mechanics of Learning</li>
-                                    </ul>
-                                </div>
-                                <div class="course-category">
-                                    <h5>Technology</h5>
-                                    <ul>
-                                        <li>Programming Methodology and abstraction (Python, C++)</li>
-                                        <li> Mathematical foundations of computing</li>
-                                        <li>Applied Machine Learning</li>
-                                        <li>AI in Healthcare</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="education-achievements">
-                            <h4>Stanford Graduate school of Eduaction Honors Thesis</h4>
-                            <p class="education-gpa"> Generative AI for Personalizing Scenario-based Learning models</p>
-                            <ul>
-                                <li>Led comprehensive thesis research project evaluating Generative AI's effectiveness in personalizing scenario-based learning</li>
-                                <li>Designed and conducted UX testing using mixed methods to assess personalized learning's impact on retention and motivation for college students</li>
-                                <li>Developed AI-driven learning prototype using AWS's Partyrock</li>
-                                <li>Presented and published research findings in Stanford Digital Repository</li>
+                <article class="project project-lead">
+                    <figure class="project-figure">
+                        <img src="img/synced.jpg" width="1800" height="1017" loading="lazy" alt="SyncED title slide: Differentiated Strategies Meet Student Needs, with a teacher and student working together">
+                    </figure>
+                    <div class="project-body">
+                        <div class="project-main">
+                            <h3>SyncED — AI-powered differentiated instruction</h3>
+                            <p>Designed and tested a tool for differentiated instruction that helps educators stay in sync with their students' needs through detailed classroom insights and analytics. SyncED uses large language models to give educators research-based teaching recommendations tailored to their classroom dynamics, so they can improve lessons and build a more engaging, supportive environment for students.</p>
+                            <ul class="project-links">
+                                <li><a href="https://ed.stanford.edu/ldt/students/projects/synced" target="_blank" rel="noopener noreferrer">Project overview <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+                                <li><a href="https://drive.google.com/file/d/1GC9mou0qqMdu6t8aFSIsZk3kc5qoActo/view" target="_blank" rel="noopener noreferrer">Project video <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+                                <li><a href="https://www.synced.pragmatize.co" target="_blank" rel="noopener noreferrer">Product prototype <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="education-item">
-                    <div class="education-content">
-                        <div class="education-header">
-                            <h3>High School</h3>
-                            
-                        </div>
-                        
-                        <p class="education-gpa">GPA: 4.02</p>
-                        <div class="education-achievements">
-                            <h4>University City High School (2018 - 2020)</h4>
-                            <ul><i class="fas fa-map-marker-alt"></i>  San Diego, United States</ul>
-                    
-                            <h4>Greek Community School Ethiopia (2003 - 2018)</h4>
-                            <ul><i class="fas fa-map-marker-alt"></i>  Addis Ababa, Ethiopia</ul>
-        
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming & Data</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <span>C++</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-chart-bar"></i>
-                            <span>R</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>Data Analysis</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Research & Design</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fas fa-brain"></i>
-                            <span>UX/UI Design and testing</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-flask"></i>
-                            <span>Prototyping</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Curriculum Design</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-microscope"></i>
-                            <span>Research Methods</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Technologies & Tools</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-aws"></i>
-                            <span>AWS</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-figma"></i>
-                            <span>Figma</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>FlutterFlow</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-robot"></i>
-                            <span>AI/ML</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Work Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="experience-timeline">
-                <div class="experience-item">
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>Learning Design Specialist & Consultant</h3>
-                            <span class="experience-date">June 2025 - August 2025</span>
-                        </div>
-                        <p class="experience-company">CK-12 Foundation</p>
-                        <div class="experience-achievements">
-                            <h4>Key Contributions:</h4>
-                            <ul>
-                                <li>Worked as a learning design specialist and consultant contractor with CK-12</li>
-                                <li>Created interactive educational activities in biology for e-textbooks and digital learning platforms</li>
-                                <li>Designed and developed clickable components that enhance student engagement and understanding</li>
-                                <li>Custom SVG asset creation and design using Figma</li>
-                                <li>AI-assisted development workflow using Cursor for efficient content creation</li>
-                                <li>Learning design consultation for educational content optimization</li>
+                        <div class="project-side">
+                            <h4>Key features</h4>
+                            <ul class="ticks">
+                                <li>Robust student profiles and formative feedback analysis</li>
+                                <li>Large language models for research-based teaching recommendations</li>
+                                <li>Detailed classroom insights and analytics</li>
+                                <li>Recommendations tailored to classroom dynamics</li>
                             </ul>
+                            <p class="tags">AI/ML · Large Language Models · Educational Analytics</p>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="experience-item">
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>Lesson Developer</h3>
-                            <span class="experience-date">April 2025 - June 2025</span>
-                        </div>
-                        <p class="experience-company"><a href="https://craft.stanford.edu" target="_blank" rel="noopener noreferrer">Stanford Classroom-Ready Resources AI for Teaching</a></p>
-                        <div class="experience-achievements">
-                            <h4>Key Contributions:</h4>
-                            <ul>
-                            <li> Developed brief, subject-specific AI literacy lessons for high school students.</li>
-                            
-                            </ul> 
-                        </div>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>Research Assistant</h3>
-                            <span class="experience-date">June 2022 - June 2025</span>
-                        </div>
-                        <p class="experience-company"><a href="https://edneuroinitiative.stanford.edu/people/meheret-abebe" target="_blank" rel="noopener noreferrer">Stanford Educational Neuroscience Initiative Lab</a></p>
-                        <div class="experience-achievements">
-                            <h4>Key Contributions:</h4>
-                            <ul>
-                                <li>Developed an R package to streamline data analysis and reduce redundant coding for PhD students</li>
-                                <li>Led automation of result scoring using custom technological solutions to improve research efficiency</li>
-                                <li>Collected and analyzed behavioral and EEG data across children, college students, and adults using Xdiva</li>
-                                <li>Conducted assessments and data collection sessions at Synapse School classrooms</li>
-                                <li>Designed and built an updated version of SMARTE, a math assessment tool for children, including UI/UX design (Figma, Flutter flow, Canva)</li>
-                                <li>Researched and implemented AI-enhanced development workflows using multi-agent systems (bolt.new, Lovable, Cursor)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>Curriculum Developer</h3>
-                            <span class="experience-date">January 2025 - March 2025</span>
-                        </div>
-                        <p class="experience-company">TeachFX (Through Stanford Cardinal Course)</p>
-                        <div class="experience-achievements">
-                            <h4>Key Contributions:</h4>
-                            <ul>
-                                <li>Designed a curriculum to teach TeachFX's five high-leverage practices, aligning with learning science principles</li>
-                                <li>Created short, targeted lessons and activities grounded in curriculum design principles</li>
-                                <li>Helped build a prototype demonstrating how the curriculum integrates into the existing TeachFX platform</li>
-                                <li>Applied educational theory to create seamless in-app teacher learning experiences</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3>Research Assistant</h3>
-                            <span class="experience-date">Summer 2021</span>
-                        </div>
-                        <p class="experience-company"><a href="http://nanofab.sdsu.edu" target="_blank" rel="noopener noreferrer">NANO FAB Lab, San Diego State University</a></p>
-                        <div class="experience-achievements">
-                            <h4>Key Contributions:</h4>
-                            <ul>
-                                <li>Collaborated with graduate students to research and test nanoelectrodes used to measure brain activity</li>
-                                <li>Certified with Lithography of level IIB for the fabrication of nanoelectrodes</li>
-                                <li>Conducted independent research to create models for AI/ML in Brain-Computer-Interfaces</li>
-                                <li>Led two research seminars presenting models and nanofabrication experience for SDSU Women in Engineering and Black Empowered Learners</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
- <!-- Projects Section -->
- <section id="projects" class="projects">
-    <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-           
-
-            <div class="project-card synced">
-                <div class="project-image">
-                    <img src="synced real.png" alt="SyncED Screenshot" class="project-image-img">
-                </div>
-                <div class="project-content">
-                    <h3>SyncED - AI-Powered Differentiated Instruction</h3>
-                    <p> Designed and tested a tool for differentiated instruction that helps educators be in sync with their students' needs through detailed classroom insights and analytics. SyncED also uses Large Language Models to provide educators with research-based teaching recommendations tailored to their classroom dynamics, empowering them to improve lessons and foster a more engaging and supportive educational environment for students.</p>
-                    <div class="project-features">
-                        <h4>Key Features:</h4>
-                        <ul>
-                            <li>Robust student profiles and formative feedback analysis</li>
-                            <li>Large Language Models for research-based teaching recommendations</li>
-                            <li>Detailed classroom insights and analytics</li>
-                            <li>Tailored recommendations for classroom dynamics</li>
-                        </ul>
-                    </div>
-                    <div class="project-tech">
-                        <span>AI/ML</span>
-                        <span>Large Language Models</span>
-                        <span>Educational Analytics</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://ed.stanford.edu/ldt/students/projects/synced" class="project-link"><i class="fas fa-play-circle"></i> Project Overview</a>
-                        <a href="https://drive.google.com/file/d/1GC9mou0qqMdu6t8aFSIsZk3kc5qoActo/view" class="project-link"><i class="fas fa-external-link-alt"></i> Project Video </a>
-                        <a href="https://www.synced.pragmatize.co" class="project-link"><i class="fas fa-play-circle"></i> Product prototype</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card honors">
-                <div class="project-image">
-                    <img src="honors thesis.png" alt="Honors Thesis" class="project-image-img">
-                </div>
-                <div class="project-content">
-                    <h3>Honors Thesis: AI-Powered Personalized Learning</h3>
-                    <p>Led a comprehensive thesis research project evaluating Generative AI's effectiveness in personalizing scenario-based learning. Designed and conducted UX testing using mixed methods to assess personalized learning's impact on retention and motivation.</p>
-                    <div class="project-features">
-                        <h4>Key Features:</h4>
-                        <ul>
-                            <li>Comprehensive evaluation of Generative AI in education</li>
-                            <li>Mixed methods UX testing for personalized learning</li>
+                <article class="project">
+                    <figure class="project-figure">
+                        <img src="img/honors-thesis.jpg" width="1800" height="980" loading="lazy" alt="Honors thesis record in the Stanford Digital Repository: Personalizing Scenario-Based Learning Models Using Generative AI">
+                    </figure>
+                    <div class="project-body">
+                        <h3>Honors thesis — AI-powered personalized learning</h3>
+                        <p>Led a thesis research project evaluating how well generative AI personalizes scenario-based learning. Designed and ran mixed-methods UX testing to assess the impact of personalized learning on retention and motivation.</p>
+                        <h4>Key features</h4>
+                        <ul class="ticks">
+                            <li>Evaluation of generative AI in education</li>
+                            <li>Mixed-methods UX testing for personalized learning</li>
                             <li>Assessment of retention and motivation impacts</li>
                             <li>AI-driven learning prototype development and testing</li>
-                            <li>Research findings published in Stanford Digital Repository</li>
+                            <li>Findings published in the Stanford Digital Repository</li>
+                        </ul>
+                        <p class="tags">Generative AI · UX Research · Mixed Methods</p>
+                        <ul class="project-links">
+                            <li><a href="https://purl.stanford.edu/ps953qt7589" target="_blank" rel="noopener noreferrer">Thesis paper <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+                            <li><a href="https://partyrock.aws/u/mehereta/mdX8UbAtp/Analogize-2.0%3A-A-tool-for-Scenario-Based-Learning" target="_blank" rel="noopener noreferrer">Prototype <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
                         </ul>
                     </div>
-                    <div class="project-tech">
-                        <span>Generative AI</span>
-                        <span>UX Research</span>
-                        <span>Mixed Methods</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://purl.stanford.edu/ps953qt7589" class="project-link"><i class="fas fa-file-alt"></i> Thesis Paper</a>
-                        <a href="https://partyrock.aws/u/mehereta/mdX8UbAtp/Analogize-2.0%3A-A-tool-for-Scenario-Based-Learning" class="project-link"><i class="fas fa-external-link-alt"></i> Prototype </a>
-                    </div>
-                </div>
-            </div>
+                </article>
 
-            <div class="project-card smarte">
-                <div class="project-image">
-                    <img src="Screenshot 2025-09-09 at 2.13.22 AM.png" alt="SMARTE Screenshot" class="project-image-img">
-                </div>
-                <div class="project-content">
-                    <h3>SMARTE Math Assessment Tool</h3>
-                    <p>Designed and built an updated version of SMARTE, a comprehensive math assessment tool for children, including UI/UX design, front-end development, and conversion from PsychoPy to jsPsych for improved user experience and scalabity</p>
-                    <div class="project-features">
-                        <h4>Key Features:</h4>
-                        <ul>
+                <article class="project project-flip">
+                    <figure class="project-figure">
+                        <img src="img/smarte.jpg" width="1800" height="954" loading="lazy" alt="SMARTE math assessment start screen with a friendly brain character in a forest clearing">
+                    </figure>
+                    <div class="project-body">
+                        <h3>SMARTE math assessment tool</h3>
+                        <p>Designed and built an updated version of SMARTE, a math assessment tool for children, covering UI/UX design, front-end development, and the move from PsychoPy to jsPsych for a better experience and scalability.</p>
+                        <h4>Key features</h4>
+                        <ul class="ticks">
                             <li>Interactive math assessments for children</li>
                             <li>UI/UX design with Figma and FlutterFlow</li>
                             <li>Performance optimization with jsPsych</li>
                             <li>Educational neuroscience research integration</li>
                         </ul>
+                        <p class="tags">Figma · FlutterFlow · jsPsych</p>
+                        <ul class="project-links">
+                            <li><span class="link-pending">UX demo video (link coming soon)</span></li>
+                        </ul>
                     </div>
-                    <div class="project-tech">
-                        <span>Figma</span>
-                        <span>FlutterFlow</span>
-                        <span>jsPsych</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> UX Demo Video</a>
-                    
-                    </div>
-                </div>
-            </div>
-            <div class="project-card teachfx">
-                <div class="project-image">
-                    <img src="teachfx2.png" alt="TeachFX Curriculum" class="project-image-img">
-                </div>
-                <div class="project-content">
-                    <h3>TeachFX Curriculum Development</h3>
-                    <p>Designed a curriculum to teach TeachFX's five high-leverage practices, aligning with learning science principles. Created short, targeted lessons and activities grounded in curriculum design principles for seamless in-app teacher learning.</p>
-                    <div class="project-features">
-                        <h4>Key Features:</h4>
-                        <ul>
-                            <li>Five high-leverage teaching practices curriculum</li>
-                            <li>Learning science principles integration</li>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure">
+                        <img src="img/teachfx.jpg" width="1200" height="734" loading="lazy" alt="TeachFX Professional Learning Curriculum title card">
+                    </figure>
+                    <div class="project-body">
+                        <h3>TeachFX curriculum development</h3>
+                        <p>Designed a curriculum to teach TeachFX's five high-leverage practices, aligned with learning science principles. Created short, targeted lessons and activities grounded in curriculum design for seamless in-app teacher learning.</p>
+                        <h4>Key features</h4>
+                        <ul class="ticks">
+                            <li>Curriculum for five high-leverage teaching practices</li>
+                            <li>Learning science principles throughout</li>
                             <li>Short, targeted lessons and activities</li>
                             <li>Seamless in-app teacher learning experience</li>
                         </ul>
+                        <p class="tags">Curriculum Design · Learning Science · Prototyping</p>
                     </div>
-                    <div class="project-tech">
-                        <span>Curriculum Design</span>
-                        <span>Learning Science</span>
-                        <span>Prototyping</span>
-                    </div>
-                   
-                </div>
-            </div>
+                </article>
 
-            <div class="project-card ck12">
-                <div class="project-image">
-                    <img src="CK 12 interactive.png" alt="CK-12 Interactive Biology" class="project-image-img">
-                </div>
-                <div class="project-content">
-                    <h3>CK-12 Interactive Biology Activities</h3>
-                    <p>Worked as a learning design specialist and consultant contractor with CK-12, creating interactive educational activities in biology for e-textbooks and digital learning platforms. Designed and developed clickable components that enhance student engagement and understanding.</p>
-                    <div class="project-features">
-                        <h4>Key Features:</h4>
-                        <ul>
+                <article class="project project-flip">
+                    <figure class="project-figure">
+                        <img src="img/ck12.jpg" width="1800" height="971" loading="lazy" alt="CK-12 interactive Skeletal Muscle System activity with clickable muscle hotspots">
+                    </figure>
+                    <div class="project-body">
+                        <h3>CK-12 interactive biology activities</h3>
+                        <p>As a learning design specialist and consultant contractor with CK-12, created interactive biology activities for e-textbooks and digital learning platforms, with clickable components that deepen student engagement and understanding.</p>
+                        <h4>Key features</h4>
+                        <ul class="ticks">
                             <li>Interactive biology learning activities for e-textbooks</li>
-                            <li>Custom SVG asset creation and design using Figma</li>
-                            <li>Interactive clickable components for student engagement</li>
+                            <li>Custom SVG assets designed in Figma</li>
+                            <li>Clickable components for student engagement</li>
                             <li>AI-assisted development workflow using Cursor</li>
                             <li>Learning design consultation for educational content</li>
                         </ul>
-                    </div>
-                    <div class="project-tech">
-                        <span>Figma</span>
-                        <span>SVG Design</span>
-                        <span>Cursor AI</span>
-                    </div>
-                    <div class="project-links">
-                        
-                        <a href="https://www.canva.com/design/DAGtTnnqSUs/U3_WZ6BiR1Yy0vol6Hku2A/edit?utm_content=DAGtTnnqSUs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="project-link"><i class="fas fa-file-alt"></i> Portfolio</a>
-                    </div>
-                </div>
-            </div>
-
-           
-            <div class="project-card">
-                <div class="project-image">
-                    <div class="project-placeholder">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>R Package for Data Analysis</h3>
-                    <p>Developed an R package to streamline data analysis and reduce redundant coding for PhD students.</p>
-                    <div class="project-features">
-                        <h4>Key Features:</h4>
-                        <ul>
-                            <li>Streamlined data analysis workflows</li>
-                            <li>Reduced redundant coding for PhD students</li>
-                            <li>Automated result scoring system</li>
-                            <li>Improved research efficiency in neuroscience lab</li>
+                        <p class="tags">Figma · SVG Design · Cursor AI</p>
+                        <ul class="project-links">
+                            <li><a href="https://www.canva.com/design/DAGtTnnqSUs/U3_WZ6BiR1Yy0vol6Hku2A/edit?utm_content=DAGtTnnqSUs&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton" target="_blank" rel="noopener noreferrer">Portfolio <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
                         </ul>
                     </div>
-                    <div class="project-tech">
-                        <span>R</span>
-                        <span>Data Analysis</span>
-                        <span>Automation</span>
+                </article>
+
+                <article class="project project-text">
+                    <div class="project-body">
+                        <h3>R package for data analysis</h3>
+                        <p>Developed an R package to streamline data analysis and reduce redundant coding for PhD students in the Educational Neuroscience lab.</p>
+                        <ul class="ticks ticks-row">
+                            <li>Streamlined data analysis workflows</li>
+                            <li>Less redundant coding for PhD students</li>
+                            <li>Automated result scoring</li>
+                            <li>Improved research efficiency</li>
+                        </ul>
+                        <p class="tags">R · Data Analysis · Automation</p>
+                        <ul class="project-links">
+                            <li><a href="https://github.com/mehereta/analyzeIntrospectr" target="_blank" rel="noopener noreferrer">GitHub <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+                        </ul>
                     </div>
-                    <div class="project-links">
-                        
-                        <a href="https://github.com/mehereta/analyzeIntrospectr" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                </article>
+            </section>
+
+            <!-- Experience -->
+            <section class="part" id="experience" style="--c: var(--rust); --c-ink: var(--on-dark)" aria-labelledby="experience-title">
+                <div class="divider">
+                    <h2 id="experience-title">Experience</h2>
+                    <p>Learning design, curriculum and research roles.</p>
+                </div>
+
+                <ol class="entries">
+                    <li class="entry">
+                        <p class="entry-date"><time datetime="2025-06">Jun 2025</time> – <time datetime="2025-08">Aug 2025</time></p>
+                        <div class="entry-body">
+                            <h3>Learning Design Specialist &amp; Consultant</h3>
+                            <p class="entry-org">CK-12 Foundation</p>
+                            <ul class="ticks">
+                                <li>Worked as a learning design specialist and consultant contractor with CK-12</li>
+                                <li>Created interactive biology activities for e-textbooks and digital learning platforms</li>
+                                <li>Designed and developed clickable components that enhance student engagement and understanding</li>
+                                <li>Created custom SVG assets in Figma</li>
+                                <li>Used an AI-assisted development workflow in Cursor for efficient content creation</li>
+                                <li>Consulted on learning design to optimize educational content</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="entry">
+                        <p class="entry-date"><time datetime="2025-04">Apr 2025</time> – <time datetime="2025-06">Jun 2025</time></p>
+                        <div class="entry-body">
+                            <h3>Lesson Developer</h3>
+                            <p class="entry-org"><a href="https://craft.stanford.edu" target="_blank" rel="noopener noreferrer">Stanford Classroom-Ready Resources About AI for Teaching (CRAFT)</a></p>
+                            <ul class="ticks">
+                                <li>Developed brief, subject-specific AI literacy lessons for high school students</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="entry">
+                        <p class="entry-date"><time datetime="2022-06">Jun 2022</time> – <time datetime="2025-06">Jun 2025</time></p>
+                        <div class="entry-body">
+                            <h3>Research Assistant</h3>
+                            <p class="entry-org"><a href="https://edneuroinitiative.stanford.edu/people/meheret-abebe" target="_blank" rel="noopener noreferrer">Stanford Educational Neuroscience Initiative Lab</a></p>
+                            <ul class="ticks">
+                                <li>Developed an R package to streamline data analysis and reduce redundant coding for PhD students</li>
+                                <li>Led automation of result scoring with custom tools to improve research efficiency</li>
+                                <li>Collected and analyzed behavioral and EEG data across children, college students and adults using Xdiva</li>
+                                <li>Conducted assessments and data collection sessions in Synapse School classrooms</li>
+                                <li>Designed and built an updated version of SMARTE, a math assessment tool for children, including UI/UX design (Figma, FlutterFlow, Canva)</li>
+                                <li>Researched and implemented AI-enhanced development workflows using multi-agent systems (bolt.new, Lovable, Cursor)</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="entry">
+                        <p class="entry-date"><time datetime="2025-01">Jan 2025</time> – <time datetime="2025-03">Mar 2025</time></p>
+                        <div class="entry-body">
+                            <h3>Curriculum Developer</h3>
+                            <p class="entry-org">TeachFX, through a Stanford Cardinal Course</p>
+                            <ul class="ticks">
+                                <li>Designed a curriculum to teach TeachFX's five high-leverage practices, aligned with learning science principles</li>
+                                <li>Created short, targeted lessons and activities grounded in curriculum design principles</li>
+                                <li>Helped build a prototype showing how the curriculum integrates into the TeachFX platform</li>
+                                <li>Applied educational theory to create seamless in-app teacher learning experiences</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="entry">
+                        <p class="entry-date"><time datetime="2021-06">Summer 2021</time></p>
+                        <div class="entry-body">
+                            <h3>Research Assistant</h3>
+                            <p class="entry-org"><a href="http://nanofab.sdsu.edu" target="_blank" rel="noopener noreferrer">NANO FAB Lab, San Diego State University</a></p>
+                            <ul class="ticks">
+                                <li>Researched and tested nanoelectrodes used to measure brain activity with graduate students</li>
+                                <li>Certified in Level IIB lithography for nanoelectrode fabrication</li>
+                                <li>Conducted independent research on AI/ML models for brain-computer interfaces</li>
+                                <li>Led two research seminars on these models and nanofabrication for SDSU Women in Engineering and Black Empowered Learners</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Skills -->
+            <section class="part" id="skills" style="--c: var(--mustard); --c-ink: var(--ink)" aria-labelledby="skills-title">
+                <div class="divider">
+                    <h2 id="skills-title">Skills</h2>
+                    <p>Research, design and the tools to build what gets designed.</p>
+                </div>
+                <div class="skill-groups">
+                    <div class="skill-group">
+                        <h3>Research &amp; Design</h3>
+                        <ul>
+                            <li>UX/UI design and testing</li>
+                            <li>Prototyping</li>
+                            <li>Curriculum design</li>
+                            <li>Research methods</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Programming &amp; Data</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>R</li>
+                            <li>Data analysis</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Technologies &amp; Tools</h3>
+                        <ul>
+                            <li>AWS</li>
+                            <li>Figma</li>
+                            <li>FlutterFlow</li>
+                            <li>AI/ML</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+
+            <!-- Education -->
+            <section class="part" id="education" style="--c: var(--blue); --c-ink: var(--on-dark)" aria-labelledby="education-title">
+                <div class="divider">
+                    <h2 id="education-title">Education</h2>
+                    <p>From Addis Ababa to San Diego to Stanford.</p>
+                </div>
+
+                <ol class="entries">
+                    <li class="entry">
+                        <p class="entry-date"><time datetime="2024-09">Sep 2024</time> – <time datetime="2025-06">Jun 2025</time></p>
+                        <div class="entry-body">
+                            <h3><a href="https://ed.stanford.edu/ldt" target="_blank" rel="noopener noreferrer">M.S. Learning Design and Technology</a></h3>
+                            <p class="entry-org">Stanford Graduate School of Education <span class="figure">GPA 3.9</span></p>
+                            <p>Designed and tested SyncED, an educational tool for differentiated instruction that uses AI to help professors tailor their teaching strategies to student profiles and ongoing formative feedback.</p>
+                        </div>
+                    </li>
+                    <li class="entry">
+                        <p class="entry-date"><time datetime="2020-09">Sep 2020</time> – <time datetime="2024-06">Jun 2024</time></p>
+                        <div class="entry-body">
+                            <h3><a href="https://majors.stanford.edu/majors/symbolic-systems" target="_blank" rel="noopener noreferrer">B.S. Symbolic Systems (Honors in Education)</a></h3>
+                            <p class="entry-org">Stanford University <span class="figure">GPA 3.7</span></p>
+
+                            <h4>Key coursework</h4>
+                            <div class="courses">
+                                <div>
+                                    <h5>Data Analysis &amp; Math</h5>
+                                    <ul>
+                                        <li>Multivariable Calculus &amp; Linear Algebra</li>
+                                        <li>Data Analysis &amp; Interpretation</li>
+                                        <li>Questionnaire Design</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Education &amp; Psychology</h5>
+                                    <ul>
+                                        <li>Educational Neuroscience</li>
+                                        <li>Entrepreneurship in EdTech</li>
+                                        <li>Curriculum Construction</li>
+                                        <li>Digital Learning Design</li>
+                                        <li>Core Mechanics of Learning</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Technology</h5>
+                                    <ul>
+                                        <li>Programming Methodology and Abstraction (Python, C++)</li>
+                                        <li>Mathematical Foundations of Computing</li>
+                                        <li>Applied Machine Learning</li>
+                                        <li>AI in Healthcare</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="thesis">
+                                <h4>Stanford Graduate School of Education honors thesis</h4>
+                                <p class="thesis-title">Generative AI for Personalizing Scenario-based Learning Models</p>
+                                <ul class="ticks">
+                                    <li>Led a thesis research project evaluating generative AI's effectiveness in personalizing scenario-based learning</li>
+                                    <li>Designed and conducted mixed-methods UX testing on personalized learning's impact on retention and motivation for college students</li>
+                                    <li>Developed an AI-driven learning prototype using AWS PartyRock</li>
+                                    <li>Presented and published findings in the Stanford Digital Repository</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="entry">
+                        <p class="entry-date"><time datetime="2018">2018</time> – <time datetime="2020">2020</time></p>
+                        <div class="entry-body">
+                            <h3>University City High School</h3>
+                            <p class="entry-org">San Diego, United States <span class="figure">GPA 4.02</span></p>
+                        </div>
+                    </li>
+                    <li class="entry">
+                        <p class="entry-date"><time datetime="2003">2003</time> – <time datetime="2018">2018</time></p>
+                        <div class="entry-body">
+                            <h3>Greek Community School Ethiopia</h3>
+                            <p class="entry-org">Addis Ababa, Ethiopia</p>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Leadership -->
+            <section class="part" id="leadership" style="--c: var(--olive); --c-ink: var(--on-dark)" aria-labelledby="leadership-title">
+                <div class="divider">
+                    <h2 id="leadership-title">Leadership</h2>
+                    <p>Early accomplishments in community and education.</p>
+                </div>
+
+                <ol class="entries">
+                    <li class="entry">
+                        <p class="entry-date"><time datetime="2015">2015</time> – <time datetime="2018">2018</time></p>
+                        <div class="entry-body">
+                            <h3>Make A Change</h3>
+                            <p class="entry-org">Founder &amp; President</p>
+                            <ul class="ticks">
+                                <li>Grew the organization from <b class="figure">2</b> to <b class="figure">50+</b> members through social media campaigns</li>
+                                <li>Led a team of <b class="figure">10</b> executive board members in weekly meetings</li>
+                                <li>Organized a book drive collecting <b class="figure">400+</b> books for the Fregenet Foundation</li>
+                                <li>Taught <b class="figure">20–30</b> elementary students English and math every Saturday</li>
+                                <li>Planned and ran a fundraising event raising <b class="figure">$1,000+</b></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="entry">
+                        <p class="entry-date"><time datetime="2019">2019</time> – <time datetime="2020">2020</time></p>
+                        <div class="entry-body">
+                            <h3>ROOTS</h3>
+                            <p class="entry-org">Founder &amp; President</p>
+                            <ul class="ticks">
+                                <li>Created weekly presentations on the diverse cultures of African countries</li>
+                                <li>Organized events to recruit and unite community members</li>
+                                <li>Promoted cultural awareness and community building</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="entry">
+                        <p class="entry-date">Addis Ababa</p>
+                        <div class="entry-body">
+                            <h3>Head Girl (Student Body President)</h3>
+                            <p class="entry-org">Greek Community School Ethiopia</p>
+                            <ul class="ticks">
+                                <li>Helped school directors develop a new system to enforce school policies</li>
+                                <li>Organized and hosted <b class="figure">3</b> major school events</li>
+                                <li>Supervised other prefects and set an example for the entire student body</li>
+                                <li>Demonstrated exceptional leadership and organizational skills</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- About -->
+            <section class="part" id="about" style="--c: var(--plum); --c-ink: var(--on-dark)" aria-labelledby="about-title">
+                <div class="divider">
+                    <h2 id="about-title">About</h2>
+                    <p>How a fascination with the mind became a career in learning design.</p>
+                </div>
+
+                <div class="about">
+                    <div class="about-text">
+                        <p class="about-intro">I'm passionate about creating student-centered educational experiences that are personalized and meaningful. With a background in Symbolic Systems and educational research from Stanford University, I bring expertise in user research, product design, programming, prototyping and AI integration in workflows. I've delivered end-to-end products and done research grounded in the learning sciences, instructional design and AI, and I'm excited to keep shaping innovative educational tools and experiences.</p>
+                        <p>I've always been fascinated by the mind: how we think and adapt to our environment, and how that ultimately shapes our identity. That curiosity led me to a B.S. in Symbolic Systems with a concentration in Neuroscience at Stanford University. The interdisciplinary program gave me a deep understanding of the brain and mind through cognitive science, neuroscience, philosophy, psychology, computer science and math. Along the way, I started to see how the mind can be shaped by learning, and that realization drew me into the learning sciences and the field of education.</p>
+                        <p>Beyond coursework, I worked in the Educational Neuroscience Lab, exploring how learning occurs at a neural level: how it's measured, the tools used to capture brain activity, and even how those tools are engineered through nanofabrication. I also designed gamified educational tools and interactive experiences for children, turning complex research experiments into playful, interactive learning activities. My honors thesis in the Graduate School of Education expanded this work, studying how personalized educational experiences in scenario-based learning affect learning outcomes. Through all of these experiences, I found my passion for creating education tools rooted in <em>constructivist learning theories</em>: tools that make learning active, meaningful and deeply personal.</p>
+                        <p>I built on these interests in Stanford's Master of Science in Learning Design and Technology program, where I designed, tested and developed SyncED, a tool for differentiated instruction that empowers instructors to meet every learner where they are. It pairs learner profiles and formative feedback with actionable, AI-driven suggestions on teaching practice, helping instructors understand and adapt to their students' needs.</p>
+                        <blockquote class="mission">
+                            <p>My mission is simple yet ambitious: to create education models that help humans unlock their full thinking capacity.</p>
+                        </blockquote>
+                        <p>For me, that means fostering curiosity, creativity, cultural awareness, originality, confidence and, above all, self-reflection. As the world becomes increasingly digital, and as AI continues to redefine what's possible, I believe technology can make student-centered, experiential and personalized learning scalable in ways we've only imagined. Working at the intersection of education and technology, my goal is to keep building tools and models that bring this vision to life: grounded in research, informed by user testing, and designed with a deep understanding of how people think and learn.</p>
+                    </div>
+                    <div class="about-figures">
+                        <figure>
+                            <img src="img/portrait-about.jpg" width="1072" height="1200" loading="lazy" alt="Meheret Abebe seated on a low stone wall on the Stanford campus">
+                        </figure>
+                        <figure>
+                            <img src="img/learning-illustration.jpg" width="1000" height="625" loading="lazy" alt="Illustration of overlapping circles linking the brain, books and technology">
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="interests">
+                    <h3>Hobbies &amp; interests</h3>
+                    <ul>
+                        <li><a href="https://www.instagram.com/meh_art4u/" target="_blank" rel="noopener noreferrer">Creative design <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+                        <li>Cultural exploration</li>
+                        <li><a href="gallery.html">Innovation &amp; technology <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+                        <li>Educational impact</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="part part-back" id="contact" style="--c: var(--ink); --c-ink: var(--on-dark)" aria-labelledby="contact-title">
+                <div class="back-cover">
+                    <h2 id="contact-title">Let's work together</h2>
+                    <p class="back-lead">I'm always interested in new opportunities and exciting projects. Reach out if you'd like to collaborate or just want to say hello.</p>
+                    <a class="back-email" href="mailto:meheret@alumni.stanford.edu">meheret@alumni.stanford.edu</a>
+                    <div class="back-grid">
+                        <dl class="back-facts">
+                            <div><dt>Location</dt><dd>Stanford, CA</dd></div>
+                            <div><dt>Affiliation</dt><dd>Stanford Graduate School of Education</dd></div>
+                        </dl>
+                        <ul class="back-links">
+                            <li><a href="https://www.linkedin.com/in/meheret-abebe-92b60821b/" target="_blank" rel="noopener noreferrer">LinkedIn <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+                            <li><a href="https://github.com/mehereta" target="_blank" rel="noopener noreferrer">GitHub <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+                            <li><a href="Resume%202025%20-%20Meheret%20%28one%20page%29.pdf" download="Meheret_Resume_2025.pdf">Résumé (PDF) <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+                        </ul>
+                    </div>
+                    <footer class="colophon">
+                        <p>&copy; 2025 Meheret Abebe. All rights reserved. Yes, I built this website myself!</p>
+                    </footer>
+                </div>
+            </section>
+        </main>
     </div>
-</section>
-    <!-- Leadership & Accomplishments Section -->
-    <section id="leadership" class="leadership">
-        <div class="container">
-            <h2 class="section-title">Leadership & Early Accomplishments</h2>
-            <div class="leadership-grid">
-                <div class="leadership-card">
-                    <div class="leadership-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>Make A Change (2015-2018)</h3>
-                    <p class="leadership-role">Founder & President</p>
-                    <ul class="leadership-achievements">
-                        <li>Grew organization from 2 to 50+ members through social media campaigns</li>
-                        <li>Led team of 10 executive board members with weekly meetings</li>
-                        <li>Organized book drive collecting 400+ books for Fregenet Foundation</li>
-                        <li>Taught 20-30 elementary students English and Math every Saturday</li>
-                        <li>Planned and executed fundraising event raising $1,000+</li>
-                    </ul>
-                </div>
-                
-                <div class="leadership-card">
-                    <div class="leadership-icon">
-                        <i class="fas fa-globe-africa"></i>
-                    </div>
-                    <h3>ROOTS (2019-2020)</h3>
-                    <p class="leadership-role">Founder & President</p>
-                    <ul class="leadership-achievements">
-                        <li>Created weekly presentations on diverse cultures in African countries</li>
-                        <li>Organized events to recruit and unite community members</li>
-                        <li>Promoted cultural awareness and community building</li>
-                    </ul>
-                </div>
-                
-                <div class="leadership-card">
-                    <div class="leadership-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>Greek Community School Ethiopia</h3>
-                    <p class="leadership-role">Head Girl (Student Body President)</p>
-                    <ul class="leadership-achievements">
-                        <li>Assisted school directors develop new system to enforce school policies</li>
-                        <li>Organized and hosted 3 major school events</li>
-                        <li>Supervised other prefects and set examples for entire student body</li>
-                        <li>Demonstrated exceptional leadership and organizational skills</li>
-                    </ul>
-                </div>
-                
-               
-            </div>
-        </div>
-    </section>
-
-   
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's work together</h3>
-                    <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out if you'd like to collaborate or just want to say hello!</p>
-                </div>
-                <div class="contact-social">
-                    <h3>Connect With Me</h3>
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>meheret@alumni.stanford.edu</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Stanford, CA</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Stanford Graduate School of Education</span>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/meheret-abebe-92b60821b/" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/mehereta?tab=overview&from=2025-10-01&to=2025-10-07" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="Resume%202025%20-%20Meheret%20%28one%20page%29.pdf" download="Meheret_Resume_2025.pdf" class="social-link" title="Download Resume"><i class="fas fa-file-pdf"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Meheret. All rights reserved. | Yes I built this website myself! </p>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>

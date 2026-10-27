@@ -1,0 +1,44 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-27T23:34:09.731Z",
+        "reason": "Claude triage: flagged containers (divider, entries, skill-group, interests, back-cover) all have 18-84px padding; verified in 1440 and 390 captures"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-27T23:34:09.750Z",
+        "reason": "Claude triage: 1.2 line-height is on display headings and the mission pull quote only; body copy is 1.55-1.65"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-27T23:34:09.767Z",
+        "reason": "User chose the Course Reader direction card whose palette includes the #e9e4d8 binder board"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "gallery.html"
+        ],
+        "createdAt": "2026-10-27T23:34:09.784Z",
+        "reason": "User chose the Course Reader direction card whose palette includes the #e9e4d8 binder board"
+      }
+    ]
+  }
+}
