@@ -594,44 +594,119 @@ button:focus-visible {
     font-weight: 600;
 }
 
+/* Under the About heading: a short stacked list */
+.ch-side .interests ul {
+    flex-direction: column;
+    gap: 8px;
+}
+
+.zoom .ch-side .interests h3 {
+    font-size: 32px;
+}
+
+.zoom .ch-side .interests ul {
+    font-size: 24px;
+}
+
 .illo {
     max-width: 440px;
 }
 
-/* Experience: chronological roles, each its own spot, dashed rules between */
-.exp-lane {
-    position: relative;
-    display: grid;
-    gap: 120px;
-}
-
-.exp-lane::before,
-.exp-lane + .spot::before {
-    content: "";
-    position: absolute;
-    top: -62px;
-    left: 0;
-    right: 0;
-    border-top: 3px dashed color-mix(in srgb, var(--ink) 35%, transparent);
-}
-
+/* Experience: newest role beside the header, the rest zigzag across the full width */
 .role {
     display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
-    gap: 40px;
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 36px;
     align-items: start;
 }
 
-.photo-row {
+.role-zigzag {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+}
+
+.hop {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: -6px 0 6px;
+    overflow: visible;
+}
+
+.hop path {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 4px;
+    stroke-dasharray: 0.5 13;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+    opacity: 0.55;
+}
+
+/* Roles whose doodle lives elsewhere let their text take the full width */
+#exp-ck12,
+#exp-teachfx,
+#exp-lab,
+#exp-nanofab {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+/* Each zigzag row: the role on one side, a doodle and what I learned in the open space */
+.zig-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 56px;
+}
+
+/* Same doodle-to-text gap as the other sections; bullets use the role's full width */
+.zig-row .role .notes li,
+.zig-row .role p {
+    max-width: none;
+}
+
+.zig-row:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+.zig-row .role {
+    flex: 0 0 70%;
+    min-width: 0;
+}
+
+.learned {
+    flex: 1;
+    min-width: 0;
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
-    gap: 40px;
-    align-items: start;
+    gap: 14px;
+    justify-items: center;
 }
 
-.photo-row .illo {
-    margin-top: 40px;
+.learned-doodle {
+    width: 100%;
+    max-width: 220px;
 }
+
+.learned-note {
+    font-size: 1rem;
+    padding: 16px 18px 18px;
+    transform: rotate(1.6deg);
+}
+
+.zig-row:nth-of-type(even) .learned-note {
+    background: #ffd9e8;
+    transform: rotate(-1.4deg);
+}
+
+.hex-r {
+    font-size: 40px;
+}
+
+
+#experience {
+    row-gap: 12px;
+}
+
 
 .portrait {
     max-width: 380px;
@@ -660,9 +735,9 @@ button:focus-visible {
     gap: 28px 48px;
 }
 
-.chapter-wide .ch-title { grid-area: title; }
-.chapter-wide .sketch { grid-area: sketch; }
-.chapter-wide .sticky { grid-area: note; max-width: 420px; }
+.chapter-wide .ch-side > .ch-title { grid-area: title; }
+.chapter-wide .ch-side > .sketch { grid-area: sketch; }
+.chapter-wide .ch-side > .sticky { grid-area: note; max-width: 420px; }
 
 .chapter-wide .ch-when {
     margin-top: 12px;
@@ -683,6 +758,30 @@ button:focus-visible {
     margin-top: 30px;
     transform: rotate(-0.6deg);
     font-size: 1.0625rem;
+}
+
+.masters-note {
+    margin-top: 22px;
+    transform: rotate(0.5deg);
+}
+
+.masters-note .links {
+    margin-top: 12px;
+}
+
+/* Education: where technology, learning science and neuroscience meet */
+.venn-label {
+    font-weight: 700;
+    fill: var(--ink);
+    stroke: var(--paper);
+    stroke-width: 5px;
+    stroke-linejoin: round;
+    paint-order: stroke;
+}
+
+.venn-note {
+    background: #ffd9e8;
+    transform: rotate(1.2deg);
 }
 
 .thesis-note h4 {
@@ -866,47 +965,57 @@ html.zoom {
 .zoom #cover { grid-area: 1 / 1 / 2 / 3; }
 .zoom #about { grid-area: 1 / 3; }
 .zoom #education { grid-area: 1 / 4; }
-.zoom .exp-lane { grid-area: 2 / 1 / 3 / 5; }
-.zoom #projects { grid-area: 3 / 4; }
-.zoom #leadership { grid-area: 3 / 3; }
-.zoom #skills { grid-area: 3 / 2; }
-.zoom #contact { grid-area: 3 / 1; }
+.zoom #experience { grid-area: 2 / 4; }
+.zoom #projects { grid-area: 2 / 3 / 4 / 4; }
+.zoom #leadership { grid-area: 2 / 2; }
+.zoom #skills { grid-area: 2 / 1; }
+.zoom #contact { grid-area: 3 / 1 / 4 / 3; justify-self: center; width: 1400px; }
 
-/* Experience timeline: intro then one stop per role, left to right */
-.zoom .exp-lane {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 0 320px;
-    align-items: start;
+.zoom .role {
+    grid-template-columns: 200px minmax(0, 1fr);
 }
 
-.zoom .exp-lane::before {
-    display: none;
+.zoom .hop {
+    margin: -8px 0 8px;
 }
 
-.zoom .exp-intro {
+.zoom .hop path {
+    stroke-width: 6px;
+}
+
+.zoom .zig-row {
+    gap: 80px;
+}
+
+.zoom .learned-doodle {
+    max-width: 260px;
+}
+
+.zoom .learned-note {
+    font-size: 21px;
+}
+
+/* The heading wraps to "3." / "Experience" here; start the first role level with the word */
+.zoom #experience .role-list {
+    padding-top: 94px;
+}
+
+.zoom #exp-ck12,
+.zoom #exp-teachfx,
+.zoom #exp-lab,
+.zoom #exp-nanofab {
     grid-template-columns: minmax(0, 1fr);
 }
 
-.zoom .role {
-    display: block;
+.zoom #experience .ch-side > .sketch {
+    max-width: 400px;
 }
 
-.zoom .role .doodle {
-    max-width: 320px;
+
+.zoom #experience {
+    row-gap: 8px;
 }
 
-.zoom .role h3 {
-    font-size: 40px;
-}
-
-.zoom .role .meta {
-    font-size: 24px;
-}
-
-.zoom .role .notes {
-    font-size: 24px;
-}
 
 .zoom .cover {
     gap: 120px;
@@ -985,12 +1094,6 @@ html.zoom {
 
 .zoom .chapter-wide .ch-when {
     margin-top: 18px;
-}
-
-/* The side column follows the reading pan; anything past the section edge is clipped */
-.zoom .chapter {
-    overflow: clip;
-    overflow-clip-margin: 48px;
 }
 
 .zoom .chapter h2,
@@ -1160,19 +1263,9 @@ html.zoom {
         max-width: 170px;
     }
 
-    .role,
-    .photo-row {
+    .role {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-
-    .exp-lane {
-        gap: 96px;
-    }
-
-    .exp-lane::before,
-    .exp-lane + .spot::before {
-        top: -50px;
     }
 
     .bar {
@@ -1206,4 +1299,37 @@ html.zoom {
     .entry h3 {
         font-size: 1.5rem;
     }
+
+    /* Too narrow to zigzag: one column joined by short dotted lines */
+    .hop {
+        width: 4px;
+        height: 36px;
+        margin: 10px 0 10px 24px;
+        border-left: 4px dotted color-mix(in srgb, var(--ink) 55%, transparent);
+    }
+
+    .hop path {
+        display: none;
+    }
+
+    .zig-row,
+    .zig-row:nth-of-type(even) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .zig-row .role {
+        flex-basis: auto;
+    }
+
+    .learned {
+        justify-items: start;
+    }
+
+    .learned-doodle {
+        max-width: 170px;
+    }
+
+
 }

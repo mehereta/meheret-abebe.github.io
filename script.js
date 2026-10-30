@@ -65,7 +65,6 @@ let transitionLen = 0;
 let currentId = null;
 let overviewScale = 1;
 let labels = [];
-let followers = [];
 
 const lerp = (a, b, t) => a + (b - a) * t;
 const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
@@ -100,8 +99,6 @@ function layout() {
         const r = rectOf(spot);
         let s = Math.min(availW / (r.w + PAD * 2), 1.2);
         const cx = r.x + r.w / 2;
-        // Experience roles always fit whole, one role per view
-        if (spot.classList.contains('role')) s = Math.min(s, availH / (r.h + PAD * 2));
         if ((r.h + PAD * 2) * s <= availH) {
             s = Math.min(s, availH / (r.h + PAD * 2));
             stops.push({ id: spot.id, cams: [{ cx, cy: r.y + r.h / 2, s }], hold: vh * 0.55 });
@@ -128,21 +125,6 @@ function layout() {
         stop.start = at;
         at += stop.hold + (i < stops.length - 1 ? transitionLen : 0);
     });
-
-    // In tall chapters the side column (title, sketch, note) follows the reading pan
-    followers.forEach(f => { f.side.style.transform = ''; });
-    followers = stops.filter(stop => stop.cams.length > 1).map(stop => {
-        const spot = document.getElementById(stop.id);
-        const side = spot.querySelector(':scope > .ch-side');
-        if (!side || spot.classList.contains('chapter-wide')) return null;
-        // Keep the number, title and sketch pinned; the rest of the column may clip
-        const keep = side.offsetHeight;
-        return {
-            side,
-            top: rectOf(spot).y,
-            maxOff: Math.max(0, spot.offsetHeight - keep),
-        };
-    }).filter(Boolean);
 
     labels.forEach(item => {
         const h = item.spot.querySelector('h2');
@@ -209,11 +191,6 @@ function render() {
     }
     const p = clamp(window.scrollY - track.offsetTop, 0, total);
     const { cam, id } = camAt(p);
-    // Sticky side column: pin it just under the bar wherever the camera is
-    const viewTop = cam.cy - (centerY - BAR - 24) / cam.s;
-    followers.forEach(f => {
-        f.side.style.transform = `translateY(${clamp(viewTop - f.top, 0, f.maxOff)}px)`;
-    });
     page.style.transform = `translate3d(${vw / 2 - cam.cx * cam.s}px, ${centerY - cam.cy * cam.s}px, 0) scale(${cam.s})`;
     const overview = cam.s < overviewScale * 1.8;
     root.classList.toggle('is-overview', overview);
@@ -246,10 +223,7 @@ function placeLabels(cam) {
     });
 }
 
-function setCurrent(spotId) {
-    // Experience roles belong to the Experience link in the bar
-    const el = spotId && document.getElementById(spotId);
-    const id = (el && el.dataset.section) || spotId;
+function setCurrent(id) {
     if (id === currentId) return;
     currentId = id;
     stripLinks.forEach(link => {
@@ -317,10 +291,31 @@ function enterList() {
     root.classList.remove('zoom', 'is-overview');
     page.style.transform = '';
     track.style.height = '';
-    followers.forEach(f => { f.side.style.transform = ''; });
-    followers = [];
     currentId = null;
     render();
+}
+
+// Experience zigzag: each dotted hop runs from the centre of one role to the centre of the next.
+// Positions are ratios of the zigzag's width, so they hold at any camera scale.
+function drawHops() {
+    const zigzag = document.querySelector('.role-zigzag');
+    if (!zigzag) return;
+    const box = zigzag.getBoundingClientRect();
+    if (!box.width) return;
+    // Centre of each role's text block
+    const xOf = el => {
+        const role = el.matches('.role') ? el : el.querySelector('.role');
+        const body = (role.querySelector('.role-body') || role).getBoundingClientRect();
+        return clamp(((body.left + body.width / 2 - box.left) / box.width) * 1000, 20, 980);
+    };
+    zigzag.querySelectorAll('.hop').forEach(hop => {
+        const prev = hop.previousElementSibling || document.getElementById('exp-ck12');
+        const next = hop.nextElementSibling;
+        if (!prev || !next) return;
+        const x1 = Math.round(xOf(prev));
+        const x2 = Math.round(xOf(next));
+        hop.querySelector('path').setAttribute('d', `M${x1} 2 C${x1} 64 ${x2} 46 ${x2} 108`);
+    });
 }
 
 function applyMode() {
@@ -329,6 +324,7 @@ function applyMode() {
     modeBtn.textContent = zoom ? 'Read as a list' : 'Zoom through the notebook';
     modeBtn.setAttribute('aria-pressed', String(!zoom));
     if (zoom) enterZoom(); else enterList();
+    drawHops();
 }
 
 modeBtn.addEventListener('click', () => {
@@ -352,6 +348,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 window.addEventListener('resize', () => {
+    drawHops();
     if (!root.classList.contains('zoom')) return;
     const progress = total ? (window.scrollY - track.offsetTop) / total : 0;
     layout();
@@ -380,7 +377,7 @@ document.addEventListener('focusin', event => {
     const spot = event.target.closest('.page .spot');
     if (!spot) return;
     const box = event.target.getBoundingClientRect();
-    if (box.top >= BAR && box.bottom <= vh && box.left >= 0 && box.right <= vw && (spot.dataset.section || spot.id) === currentId) return;
+    if (box.top >= BAR && box.bottom <= vh && box.left >= 0 && box.right <= vw && spot.id === currentId) return;
     const index = stops.findIndex(stop => stop.id === spot.id && !stop.map);
     if (index < 0) return;
     const r = rectOf(spot);
@@ -400,5 +397,6 @@ ready.then(() => {
     applyMode();
     window.addEventListener('load', () => {
         if (root.classList.contains('zoom')) layout();
+        drawHops();
     });
 });
