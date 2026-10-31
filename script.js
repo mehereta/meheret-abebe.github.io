@@ -295,26 +295,48 @@ function enterList() {
     render();
 }
 
-// Experience zigzag: each dotted hop runs from the centre of one role to the centre of the next.
-// Positions are ratios of the zigzag's width, so they hold at any camera scale.
+// Experience zigzag: each dotted hop runs from just under one role's last line to just above the
+// next role's title, from the middle of one title to the middle of the next. Measured in the zigzag's own unscaled pixels so it
+// holds at any camera scale.
 function drawHops() {
     const zigzag = document.querySelector('.role-zigzag');
     if (!zigzag) return;
     const box = zigzag.getBoundingClientRect();
     if (!box.width) return;
-    // Centre of each role's text block
-    const xOf = el => {
-        const role = el.matches('.role') ? el : el.querySelector('.role');
-        const body = (role.querySelector('.role-body') || role).getBoundingClientRect();
-        return clamp(((body.left + body.width / 2 - box.left) / box.width) * 1000, 20, 980);
+    const scale = box.width / zigzag.offsetWidth;
+    const width = zigzag.offsetWidth;
+    const roleOf = el => (el.matches('.role') ? el : el.querySelector('.role'));
+    const bodyOf = el => {
+        const role = roleOf(el);
+        return (role.querySelector('.role-body') || role).getBoundingClientRect();
+    };
+    // The title's actual text, not its full-width box
+    const titleOf = el => {
+        const range = document.createRange();
+        range.selectNodeContents(roleOf(el).querySelector('h3'));
+        return range.getBoundingClientRect();
     };
     zigzag.querySelectorAll('.hop').forEach(hop => {
-        const prev = hop.previousElementSibling || document.getElementById('exp-ck12');
+        if (getComputedStyle(hop).position !== 'absolute') {
+            hop.removeAttribute('style');
+            return;
+        }
+        const prev = hop.previousElementSibling || document.querySelector('.role-list .role:last-child');
         const next = hop.nextElementSibling;
         if (!prev || !next) return;
-        const x1 = Math.round(xOf(prev));
-        const x2 = Math.round(xOf(next));
-        hop.querySelector('path').setAttribute('d', `M${x1} 2 C${x1} 64 ${x2} 46 ${x2} 108`);
+        const from = bodyOf(prev);
+        const fromTitle = titleOf(prev);
+        const title = titleOf(next);
+        const y1 = (from.bottom - box.top) / scale + 16;
+        const y2 = (title.top - box.top) / scale - 16;
+        const h = Math.max(24, y2 - y1);
+        const x1 = (fromTitle.left + fromTitle.width / 2 - box.left) / scale;
+        const x2 = (title.left + title.width / 2 - box.left) / scale;
+        hop.style.top = `${y1}px`;
+        hop.style.height = `${h}px`;
+        hop.setAttribute('viewBox', `0 0 ${width} ${h}`);
+        hop.setAttribute('preserveAspectRatio', 'none');
+        hop.querySelector('path').setAttribute('d', `M${x1} 0 C${x1} ${h * 0.6} ${x2} ${h * 0.4} ${x2} ${h}`);
     });
 }
 
