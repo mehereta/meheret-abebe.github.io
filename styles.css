@@ -218,9 +218,31 @@ button:focus-visible {
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 10px 20px;
+    padding: 10px 20px 24px;
+    filter: drop-shadow(0 3px 4px rgba(10, 20, 50, 0.3));
+}
+
+/* The bar's paper, with a ragged edge and torn semicircle notches along the bottom like a page ripped
+   from a notepad; on its own layer so the shadow above outlines each tear */
+.bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background: var(--paper);
-    box-shadow: 0 6px 16px -10px rgba(10, 20, 50, 0.5);
+    -webkit-mask:
+        linear-gradient(#000, #000) top / 100% calc(100% - 25px) no-repeat,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 26' preserveAspectRatio='none'%3E%3Cpath d='M180 0 L0 0 L0 22.5 L3.0 22.7 L7.0 23.3 L8.3 23.8 L8.3 23.8 L9.2 21.8 L9.7 19.5 L11.4 17.9 L13.7 17.4 L15.5 15.6 L17.9 15.4 L20.1 16.0 L22.3 16.8 L23.9 18.4 L25.3 20.1 L27.0 21.6 L27.2 23.8 L27.6 23.8 L30.5 22.6 L34.1 23.4 L37.9 23.0 L41.7 23.0 L44.5 23.8 L44.9 23.8 L44.9 21.5 L46.1 19.6 L47.9 18.1 L49.8 17.0 L52.1 16.7 L54.2 16.6 L56.3 16.7 L58.2 17.7 L60.5 18.1 L61.7 20.0 L63.3 21.6 L63.5 23.8 L64.5 23.8 L66.4 22.0 L71.2 22.6 L76.1 22.4 L78.8 22.9 L80.6 23.8 L81.5 23.8 L82.4 21.7 L83.3 19.7 L84.5 17.5 L86.6 16.4 L89.1 16.4 L91.3 16.0 L93.5 16.4 L95.5 17.2 L97.9 17.6 L99.1 19.8 L100.7 21.5 L101.3 23.7 L101.2 23.8 L104.4 23.0 L107.2 22.5 L110.3 22.1 L115.2 23.3 L115.9 23.8 L115.5 23.6 L117.0 21.7 L118.0 19.7 L119.3 17.7 L121.4 16.6 L123.7 16.5 L125.9 15.2 L128.1 16.4 L130.2 17.0 L132.5 17.7 L133.7 19.7 L134.9 21.7 L135.4 23.8 L135.6 23.8 L139.2 22.9 L142.7 22.5 L147.6 22.6 L151.5 23.5 L152.3 23.8 L152.6 23.8 L152.5 21.4 L153.8 19.5 L155.9 18.4 L157.8 17.3 L159.7 15.9 L162.0 15.4 L164.2 16.5 L166.6 16.4 L168.6 17.8 L170.0 19.6 L171.0 21.7 L171.4 23.8 L171.6 23.8 L177.0 22.0 L180 22.5 Z' fill='black'/%3E%3C/svg%3E") left bottom / 180px 26px repeat-x;
+    mask:
+        linear-gradient(#000, #000) top / 100% calc(100% - 25px) no-repeat,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 26' preserveAspectRatio='none'%3E%3Cpath d='M180 0 L0 0 L0 22.5 L3.0 22.7 L7.0 23.3 L8.3 23.8 L8.3 23.8 L9.2 21.8 L9.7 19.5 L11.4 17.9 L13.7 17.4 L15.5 15.6 L17.9 15.4 L20.1 16.0 L22.3 16.8 L23.9 18.4 L25.3 20.1 L27.0 21.6 L27.2 23.8 L27.6 23.8 L30.5 22.6 L34.1 23.4 L37.9 23.0 L41.7 23.0 L44.5 23.8 L44.9 23.8 L44.9 21.5 L46.1 19.6 L47.9 18.1 L49.8 17.0 L52.1 16.7 L54.2 16.6 L56.3 16.7 L58.2 17.7 L60.5 18.1 L61.7 20.0 L63.3 21.6 L63.5 23.8 L64.5 23.8 L66.4 22.0 L71.2 22.6 L76.1 22.4 L78.8 22.9 L80.6 23.8 L81.5 23.8 L82.4 21.7 L83.3 19.7 L84.5 17.5 L86.6 16.4 L89.1 16.4 L91.3 16.0 L93.5 16.4 L95.5 17.2 L97.9 17.6 L99.1 19.8 L100.7 21.5 L101.3 23.7 L101.2 23.8 L104.4 23.0 L107.2 22.5 L110.3 22.1 L115.2 23.3 L115.9 23.8 L115.5 23.6 L117.0 21.7 L118.0 19.7 L119.3 17.7 L121.4 16.6 L123.7 16.5 L125.9 15.2 L128.1 16.4 L130.2 17.0 L132.5 17.7 L133.7 19.7 L134.9 21.7 L135.4 23.8 L135.6 23.8 L139.2 22.9 L142.7 22.5 L147.6 22.6 L151.5 23.5 L152.3 23.8 L152.6 23.8 L152.5 21.4 L153.8 19.5 L155.9 18.4 L157.8 17.3 L159.7 15.9 L162.0 15.4 L164.2 16.5 L166.6 16.4 L168.6 17.8 L170.0 19.6 L171.0 21.7 L171.4 23.8 L171.6 23.8 L177.0 22.0 L180 22.5 Z' fill='black'/%3E%3C/svg%3E") left bottom / 180px 26px repeat-x;
+}
+
+/* The bar's own box is transparent, so its contents carry the paper too */
+.bar-home,
+.strip,
+.bar-mode {
+    background-color: var(--paper);
 }
 
 .bar-home {
@@ -1330,7 +1352,7 @@ html.zoom {
     }
 
     .bar {
-        padding: 8px 10px;
+        padding: 8px 10px 22px;
     }
 
     .gallery-grid {

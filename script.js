@@ -10,7 +10,7 @@ const stripLinks = Array.from(document.querySelectorAll('.strip a'));
 const modeBtn = document.querySelector('.bar-mode');
 const canZoom = window.matchMedia('(min-width: 901px) and (prefers-reduced-motion: no-preference)');
 
-const BAR = 60;      // height of the fixed top bar
+let BAR = 80;        // height of the fixed top bar, measured in layout()
 const MARGIN = 44;   // breathing room around a framed chapter
 const PAD = 56;      // canvas padding around a chapter when framing it
 
@@ -86,6 +86,7 @@ function layout() {
     vw = window.innerWidth;
     vh = window.innerHeight;
     const availW = vw - MARGIN * 2;
+    BAR = document.querySelector('.bar').offsetHeight;
     const availH = vh - BAR - MARGIN * 2;
     centerY = BAR + MARGIN + availH / 2;
     transitionLen = vh * 0.95;
